@@ -1,7 +1,7 @@
 import curriedComputed from 'ember-macro-helpers/curried-computed';
 
-export default curriedComputed((val1, val2/*, valN... */) => {
+export default curriedComputed((...values) => {
   // This is where your normal computed code will go.
   // For example:
-  return val1 + val2;
+  return values.reduce((total, val) => total + val);
 });
